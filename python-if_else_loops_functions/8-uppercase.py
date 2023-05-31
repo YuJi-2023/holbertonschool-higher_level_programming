@@ -7,3 +7,5 @@ def uppercase(str):
         else:
             new_str = new_str + c
     return new_str
+
+print("{0}".format(uppercase(str)))
