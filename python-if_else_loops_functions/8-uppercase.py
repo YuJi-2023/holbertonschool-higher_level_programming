@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-def uppercase(str):
+def uppercase(mystr):
     new_str = ""
-    for c in str:
+    for c in mystr:
         if ord(c) in range(97, 123):
             new_str = new_str + chr(ord(c) - 32)
         else:
             new_str = new_str + c
-    return new_str
-
-print("{0}".format(uppercase(str)))
+    print(new_str)
