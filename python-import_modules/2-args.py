@@ -11,7 +11,7 @@ def show_argv():
         for i in range(1, count + 1):
             print(f"{i}: {sys.argv[i]}")
     else:
-        print("0 arguments.")
+        print(f"{count} arguments.")
 
 if __name__ == "__main__":
     show_argv()
