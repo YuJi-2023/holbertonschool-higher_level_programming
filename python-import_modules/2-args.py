@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def show_argv():
     count = len(sys.argv) - 1
     if count == 1:
@@ -12,6 +13,7 @@ def show_argv():
             print(f"{i}: {sys.argv[i]}")
     else:
         print(f"{count} arguments.")
+
 
 if __name__ == "__main__":
     show_argv()
