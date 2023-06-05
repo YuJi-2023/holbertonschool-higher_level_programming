@@ -4,7 +4,7 @@ def print_matrix_integer(matrix=[[]]):
         list_in_matrix = matrix[idx_of_matrix]
         for idx_of_list in range(len(list_in_matrix)):
             if idx_of_list == 0:
-                print("{0}".format(list_in_matrix[idx_of_list]), end='')
+                print("{:d}".format(list_in_matrix[idx_of_list]), end='')
             else:
-                print(" {0}".format(list_in_matrix[idx_of_list]), end='')
+                print(" {:d}".format(list_in_matrix[idx_of_list]), end='')
         print()
