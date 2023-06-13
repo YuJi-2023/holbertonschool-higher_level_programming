@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""Square class"""
+
+
 class Square:
+    """Initializes data"""
     def __init__(self, size=0):
-        """Initializes with size"""
+        """check size validation"""
         if type(size) is int:
             self.__size = size
         else:
