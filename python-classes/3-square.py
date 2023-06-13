@@ -3,6 +3,7 @@
 
 
 class Square:
+    """Square class"""
     def __init__(self, size=0):
         """Initialize a square object and validation"""
         if type(size) is int:
