@@ -1,0 +1,44 @@
+The ``matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+Import ``matrix_divided``:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+We are testing it in the following cases:
+
+    case: normal
+    >>> matrix = [[1, 4, 6], [3, 9, 7]]
+    >>> div = 1
+    >>> matrix_divided(matrix, div)
+    [[1.0, 4.0, 6.0], [3.0, 9.0, 7.0]]
+
+    case: float
+    >>> matrix = [[4.0 , 6.0], [10.0, 20.0]]
+    >>> div = 2
+    >>> matrix_divided(matrix, div)
+    [[2.0, 3.0], [5.0, 10.0]]
+
+    case: negative input
+    >>> matrix = [[2, 4, 6], [-2, -4, -6]]
+    >>> div = 2
+    >>> matrix_divided(matrix, div)
+    [[1.0, 2.0, 3.0], [-1.0, -2.0, -3.0]]
+
+    case: div is 0
+    >>> matrix = [[1, 2], [3, 6]]
+    >>> div = 0
+    >>> matrix_divided(matrix, div)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    case: other type of elements in matrix
+    >>> matrix = [['hello', 5, (1, bye)], ['how', 'are', 'you']]
+    >>> div = 1
+    >>> matrix_divided(matrix, div)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
