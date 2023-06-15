@@ -44,9 +44,15 @@ We are testing it in the following cases:
     ...
     TypeError: a must be an integer
 
-    case: Nan
+    case: NaN
     >>> import math
     >>> add_integer(math.nan)
     Traceback (most recent call last):
     ...
     ValueError: cannot convert float NaN to integer
+
+    case: float overflow inf and -inf
+    >>> add_integer(abs(float('inf')))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
