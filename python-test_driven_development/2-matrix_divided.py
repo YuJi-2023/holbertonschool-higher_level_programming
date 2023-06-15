@@ -23,12 +23,12 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if not all(map(lambda row: len(row) == len(matrix[0]), matrix[1:])):
         raise TypeError("Each row of the matrix must have the same size")
+    if not all(all(map(lambda x: isinstance(x, (int, float)), row)) for row
+               in matrix):
+        raise TypeError(matrix_msg)
     for list_in_matrix in matrix:
         new_list = []
         for elem in list_in_matrix:
-            if not isinstance(elem, (int, float)):
-                raise TypeError(matrix_msg)
-            else:
-                new_list.append(float("{:.2f}".format(elem / div)))
+            new_list.append(float("{:.2f}".format(elem / div)))
         new_matrix.append(new_list)
     return new_matrix
