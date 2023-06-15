@@ -52,9 +52,17 @@ We are testing it in the following cases:
     TypeError: Each row of the matrix must have the same size
 
     case: other type of elements in matrix
-    >>> matrix = [['hello', 5, 'bye'], ['how', 'are', 'you']]
+    >>> matrix = [['hello', 'ok', 'bye'], ['how', 'are', 'you']]
     >>> div = 1
     >>> matrix_divided(matrix, div)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    case: float inf
+    >>> matrix = [[2, 4], [6, 8]]
+    >>> div = float('inf')
+    >>> matrix_divided(matrix, div)
+    [[0.0, 0.0], [0.0, 0.0]]
+
+
