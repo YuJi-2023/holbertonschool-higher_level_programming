@@ -65,4 +65,15 @@ We are testing it in the following cases:
     >>> matrix_divided(matrix, div)
     [[0.0, 0.0], [0.0, 0.0]]
 
+    case: missing one input
+    >>> matrix = [[2, 4], [6, 8]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
+    case: missing both inputs
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
