@@ -21,8 +21,5 @@ def print_square(size):
         raise TypeError(s1_msg)
     if size < 0:
         raise ValueError(s2_msg)
-    if not size:
-        raise TypeError(m)
     for i in range(size):
-        print('#' * size, end='')
-        print('')
+        print('#' * size)
