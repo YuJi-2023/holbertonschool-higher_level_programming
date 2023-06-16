@@ -50,8 +50,6 @@ class Rectangle:
     @classmethod
     def create_rec(cls, row, col):
         """create a classmethod to return rectangle with #"""
-        if row == 0 or col == 0:
-            return None
         new_rec = []
         for _ in range(col):
             row_list = list('#' * row)
