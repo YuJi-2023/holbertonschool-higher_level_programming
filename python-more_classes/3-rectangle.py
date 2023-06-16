@@ -50,6 +50,8 @@ class Rectangle:
     @classmethod
     def create_rec(cls, row, col):
         """create a classmethod to return rectangle with #"""
+        if row == 0 or col == 0:
+            return ""
         new_rec = []
         for _ in range(col):
             row_list = list('#' * row)
@@ -57,6 +59,6 @@ class Rectangle:
         return new_rec
 
     def __str__(self):
-        """define a custom __str__()"""
+        """custom __str__() return string representation of rectangle"""
         return '\n'.join(''.join(row) for row in self.create_rec(self.width,
                          self.height))
