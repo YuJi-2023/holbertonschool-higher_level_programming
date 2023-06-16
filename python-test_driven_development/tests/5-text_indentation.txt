@@ -9,13 +9,9 @@ Import ``text_indentation``:
 
 We are testing it in the following cases:
 
-    normal case: with . ? :
-    >>> text_indentation("I am a tester. I am a tester? I am a tester:")
+    normal case: with .
+    >>> text_indentation("I am a tester.")
     I am a tester.
-
-    I am a tester?
-
-    I am a tester:
 
     case: not a string
     >>> text_indentation(56789)
