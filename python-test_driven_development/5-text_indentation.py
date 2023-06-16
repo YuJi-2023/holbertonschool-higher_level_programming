@@ -17,6 +17,15 @@ def text_indentation(text):
     m_msg = "text_indentation() missing 1 required positional argument: 'text'"
     if not isinstance(text, str):
         raise TypeError(t_msg)
-    for char in ['.', '?', ':']:
-        text = text.replace(char + ' ', char + '\n\n')
-    print(text, end='')
+    new_line = False
+    for char in text:
+        if new_line:
+            if char == ' ':
+                continue
+            new_line = False
+        if char =='.' or char == '?' or char == ':':
+            print(char)
+            print('')
+            new_line = True
+        else:
+            print(char, end='')
