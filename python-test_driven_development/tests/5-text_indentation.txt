@@ -12,6 +12,7 @@ We are testing it in the following cases:
     normal case: with .
     >>> text_indentation("I am a tester.")
     I am a tester.
+    <BLANKLINE>
 
     case: not a string
     >>> text_indentation(56789)
@@ -24,3 +25,7 @@ We are testing it in the following cases:
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    case: string with blank line
+    >>> text_indentation("")
+    
