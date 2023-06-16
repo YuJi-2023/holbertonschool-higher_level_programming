@@ -52,14 +52,14 @@ class Rectangle:
         else:
             return (self.width + self.height) * 2
 
-    @classmethod
+#    @classmethod
     def create_rec(cls, row, col):
         """create a classmethod to return rectangle with #"""
         if row == 0 or col == 0:
             return ""
         new_rec = []
         for _ in range(col):
-            row_list = list(str(Rectangle.print_symbol) * row)
+            row_list = list(str(cls.print_symbol) * row)
             new_rec.append(row_list)
         return new_rec
 
@@ -74,5 +74,5 @@ class Rectangle:
 
     def __del__(self):
         """custom __del__() to return msg when instance deleted"""
-        Rectangle.number_of_instances -= 1
+        self.number_of_instances -= 1
         print("Bye rectangle...")
