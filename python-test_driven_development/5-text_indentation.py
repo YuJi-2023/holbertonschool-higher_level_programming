@@ -18,5 +18,5 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError(t_msg)
     for char in ['.', '?', ':']:
-        text = text.replace(char, (char + '\n\n'))
+        text = text.replace(char + ' ', char + '\n')
     print(text)
