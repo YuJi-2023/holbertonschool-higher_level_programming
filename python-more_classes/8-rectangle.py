@@ -52,7 +52,6 @@ class Rectangle:
         else:
             return (self.width + self.height) * 2
 
-#    @classmethod
     def create_rec(cls, row, col):
         """create a classmethod to return rectangle with #"""
         if row == 0 or col == 0:
