@@ -17,13 +17,13 @@ We are testing it in the following cases:
     >>> matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    TypeError: m_a can't be empty
+    ValueError: m_a can't be empty
 
     case: empty m_a[]
     >>> matrix_mul([[]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    TypeError: m_a can't be empty
+    ValueError: m_a can't be empty
 
     case: empty m_b
     >>> matrix_mul([[1, 2], [3, 4]], [])
