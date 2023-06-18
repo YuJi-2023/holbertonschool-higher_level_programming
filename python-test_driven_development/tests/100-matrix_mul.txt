@@ -41,13 +41,13 @@ We are testing it in the following cases:
     >>> matrix_mul(5, [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    ValueError: m_a must be a list
+    TypeError: m_a must be a list
 
     case: m_b not list
     >>> matrix_mul([[1, 2], [3, 4]], 5)
     Traceback (most recent call last):
     ...
-    ValueError: m_b must be a list
+    TypeError: m_b must be a list
 
     case: m_a not list of lists
     >>> matrix_mul([2, 3],[[1, 2],[3, 4]])
