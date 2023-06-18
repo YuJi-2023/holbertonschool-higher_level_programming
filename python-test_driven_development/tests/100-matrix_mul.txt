@@ -29,13 +29,13 @@ We are testing it in the following cases:
     >>> matrix_mul([[1, 2], [3, 4]], [])
     Traceback (most recent call last):
     ...
-    TypeError: m_b can't be empty
+    ValueError: m_b can't be empty
 
     case: empty m_b[]
     >>> matrix_mul([[1, 2], [3, 4]], [[]])
     Traceback (most recent call last):
     ...
-    TypeError: m_b can't be empty
+    ValueError: m_b can't be empty
 
     case: m_a not list
     >>> matrix_mul(5, [[1, 2], [3, 4]])
