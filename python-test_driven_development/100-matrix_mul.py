@@ -27,22 +27,22 @@ def matrix_mul(m_a, m_b):
         raise ValueError(err_msg_6)
     if not isinstance(m_a, list):
         raise TypeError(err_msg_1)
-        for elem in m_a:
-            if not isinstance(elem, list):
-                raise TypeError(err_msg_3)
-            else:
-                for value in elem:
-                    if not isinstance(value, [int, float]):
-                        raise TypeError(err_msg_7)
+    for elem in m_a:
+        if not isinstance(elem, list):
+            raise TypeError(err_msg_3)
+        else:
+            for value in elem:
+                if not isinstance(value, (int, float)):
+                    raise TypeError(err_msg_7)
     if not isinstance(m_b, list):
         raise TypeError(err_msg_2)
-        for elem in m_b:
-            if not isinstance(elem, list):
-                raise TypeError(err_msg_4)
-            else:
-                for value in elem:
-                    if not isinstance(value, [int, float]):
-                        raise TypeError(err_msg_8)
+    for elem in m_b:
+        if not isinstance(elem, list):
+            raise TypeError(err_msg_4)
+        else:
+            for value in elem:
+                if not isinstance(value, (int, float)):
+                    raise TypeError(err_msg_8)
     if not all(len(row) == len(m_a[0]) for row in m_a):
         raise TypeError(err_msg_9)
     if not all(len(row) == len(m_b[0]) for row in m_b):
