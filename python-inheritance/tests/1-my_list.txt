@@ -1,0 +1,43 @@
+The ``1-my_list.py`` module
+======================
+
+Using ``1-my_list``
+-------------------
+
+Import ``MyList``:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Create an instance
+    >>> my_list = MyList()
+
+We are testing it in the following cases:
+
+    case: isintance
+    >>> isinstance(my_list, MyList)
+    True
+
+    case: is subclass of list
+    >>> issubclass(MyList, list)
+    True
+
+    case: is empty list
+    >>> len(my_list)
+    0
+
+    case: add elements to the list
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    case: test the instance method print_sorted
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    case: what about the original list after sorted
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
