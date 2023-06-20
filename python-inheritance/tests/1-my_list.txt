@@ -8,36 +8,32 @@ Import ``MyList``:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Create an instance
-    >>> my_list = MyList()
-
 We are testing it in the following cases:
 
-    case: isintance
-    >>> isinstance(my_list, MyList)
-    True
-
-    case: is subclass of list
-    >>> issubclass(MyList, list)
-    True
-
-    case: is empty list
-    >>> len(my_list)
-    0
-
-    case: add elements to the list
+    case: basic case sorting
+    >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
     >>> my_list.append(2)
     >>> my_list.append(3)
     >>> my_list.append(5)
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
-
-    case: test the instance method print_sorted
-    >>> my_list.print_sorted()
+    >>> print(my_list.print_sorted())
     [1, 2, 3, 4, 5]
+    None
 
-    case: what about the original list after sorted
+
+    case: with negative int sorting
+    >>> my_list.append(-1)
+    >>> print(my_list.print_sorted())
+    [-1, 1, 2, 3, 4, 5]
+    None
+
+    after sorting what about the original list
     >>> print(my_list)
-    [1, 4, 2, 3, 5]
+    [1, 4, 2, 3, 5, -1]
+
+    case: sort empty list
+    >>> my_list = MyList()
+    >>> print(my_list.print_sorted())
+    []
+    None
