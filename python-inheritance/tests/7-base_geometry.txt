@@ -49,6 +49,18 @@ We are testing the integer_validator() method:
     ...
     TypeError: name must be an integer
 
+    case: value is tuple
+    >>> bg.integer_validator("name", (1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    case: value is a dict
+    >>> bg.integer_validator("name", {1, 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
     case: value is None
     >>> bg.integer_validator("name", None)
     Traceback (most recent call last):
