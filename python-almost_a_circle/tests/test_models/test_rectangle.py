@@ -5,8 +5,9 @@ from models.rectangle import Rectangle
 class testRectangle(unittest.TestCase):
     """test subclass Rectanlge"""
     def test_init(self):
+        r0 = Rectangle(1, 2)
         r1 = Rectangle(2, 3)
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(r0.id + 1, r1.id)
         r2 = Rectangle(2, 3, 4, 5, 12)
         self.assertEqual(r2.id, 12)
 
