@@ -18,3 +18,9 @@ class testRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 1)
         self.assertEqual(r3.y, 2)
         self.assertEqual(r3.id, 23)
+
+    def test_raiseErrors(self):
+        r4 = Rectangle(5, 2)
+        with self.assertRaises(TypeError):
+            r4.width = "hello"
+
