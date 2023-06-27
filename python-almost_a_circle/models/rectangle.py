@@ -86,9 +86,14 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}"
 
-    def update(self, *args):
-        """update and assign values to attributes"""
+    def update(self, *args, **kwargs):
+        """update and assign key/value to attributes"""
         att_list = ['id', 'width', 'height', 'x', 'y']
         arg_len = len(args)
-        for index in range(0, arg_len):
-            setattr(self, att_list[index], args[index])
+        if args is not None and arg_len > 0:
+            for index in range(0, arg_len):
+                setattr(self, att_list[index], args[index])
+        elif kwargs is not None:
+            for key in kwargs.keys():
+                if key in att_list:
+                    setattr(self, key, kwargs.get(key))
