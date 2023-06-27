@@ -19,6 +19,14 @@ class testRectangle(unittest.TestCase):
         self.assertEqual(r3.y, 2)
         self.assertEqual(r3.id, 23)
 
+    def test_rectangle(self):
+        re1 = Rectangle(1, 2)
+        re2 = Rectangle(1, 2, 3)
+        re3 = Rectangle(1, 2, 3, 4)
+        self.assertIsInstance(re1, Rectangle)
+        self.assertIsInstance(re2, Rectangle)
+        self.assertIsInstance(re3, Rectangle)
+
     def test_raiseErrors(self):
         r4 = Rectangle(5, 2)
         with self.assertRaises(TypeError):
