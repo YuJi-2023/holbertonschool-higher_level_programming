@@ -23,4 +23,17 @@ class testRectangle(unittest.TestCase):
         r4 = Rectangle(5, 2)
         with self.assertRaises(TypeError):
             r4.width = "hello"
+        r5 = Rectangle(5, 2)
+        with self.assertRaises(TypeError):
+            r5.height = "world"
 
+        r6 = Rectangle(5, 2)
+        with self.assertRaises(ValueError):
+            r6.width = -1
+        r7 = Rectangle(5, 2)
+        with self.assertRaises(ValueError):
+            r7.height = -1
+
+    def test_area(self):
+        r8 = Rectangle(3, 6)
+        self.assertEqual(r8.area(), 18)
