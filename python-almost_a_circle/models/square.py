@@ -24,3 +24,14 @@ class Square(Rectangle):
         """set the value for size"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """assign value to attributes"""
+        att_list = ['id', 'size', 'x', 'y']
+        if args is not None and len(args) > 0:
+            for index in range(0, min(len(args), len(att_list))):
+                setattr(self, att_list[index], args[index])
+        elif kwargs is not None:
+            for key in kwargs.keys():
+                if key in att_list:
+                    setattr(self, key, kwargs.get(key))
