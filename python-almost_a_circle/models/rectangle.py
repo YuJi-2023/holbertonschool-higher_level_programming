@@ -85,3 +85,10 @@ class Rectangle(Base):
         """return a customised string representation"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """update and assign values to attributes"""
+        att_list = ['id', 'width', 'height', 'x', 'y']
+        arg_len = len(args)
+        for index in range(0, arg_len):
+            setattr(self, att_list[index], args[index])
