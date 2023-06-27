@@ -79,3 +79,8 @@ class Rectangle(Base):
         rec = []
         for h in range(0, self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        """return a customised string representation"""
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
+- {self.__width}/{self.__height}"
