@@ -76,9 +76,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints rectangle with #"""
-        rec = []
+        for i in range(0, self.__y):
+            print("")
         for h in range(0, self.__height):
-            print('#' * self.__width)
+            print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
         """return a customised string representation"""
