@@ -91,7 +91,7 @@ class Rectangle(Base):
         att_list = ['id', 'width', 'height', 'x', 'y']
         arg_len = len(args)
         if args is not None and arg_len > 0:
-            for index in range(0, arg_len):
+            for index in range(0, min(arg_len, len(att_list))):
                 setattr(self, att_list[index], args[index])
         elif kwargs is not None:
             for key in kwargs.keys():
