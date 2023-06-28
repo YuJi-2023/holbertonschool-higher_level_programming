@@ -1,4 +1,6 @@
 """unittest for rectangle module"""
+import io
+import sys
 import unittest
 from models.rectangle import Rectangle
 
@@ -46,6 +48,14 @@ class testRectangle(unittest.TestCase):
         r8 = Rectangle(3, 6)
         self.assertEqual(r8.area(), 18)
 
-   # def test_display(self):
-    #    r9 = Rectangle(1, 1)
-     #   self.assertEqual(r9.display(), '#\n#\n')
+    def test_display(self):
+        r9 = Rectangle(1, 1)
+        expected_pattern = '#\n'
+
+        captured_pattern = io.StringIO()
+        sys.stdout = captured_pattern
+
+        r9.display()
+        printout_pattern = captured_pattern.getvalue()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(printout_pattern, expected_pattern)
