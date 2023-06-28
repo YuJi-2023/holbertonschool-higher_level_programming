@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """define class Base"""
 import json
+import os
 
 
 class Base:
@@ -25,11 +26,12 @@ class Base:
     def save_to_file(cls, list_objs):
         """write json string of list_objs to a file"""
         file_name = cls.__name__ + '.json'
-        if list_objs is None:
-            list_objs = []
-        json_str = cls.to_json_string(obj.to_dictionary() for obj in list_objs)
-        with open(file_name, 'w') as myFile:
-            myFile.write(json_str)
+        with open(file_name, "w") as myFile:
+            if list_objs is None:
+                myFile.write("[]")
+            else:
+                myFile.write(cls.to_json_string([obj.to_dictionary() for
+                             obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -49,3 +51,16 @@ class Base:
                 instance = cls(2)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """return a list of instancs"""
+        instance_list = []
+        file_name = f"{cls.__name__}.json"
+        if os.path.exists(file_name) is True:
+            with open(file_name, "r") as json_file:
+                dict_list = cls.from_json_string(json_file.read())
+            for item in dict_list:
+                instance = cls.create(**item)
+                instance_list.append(instance)
+        return instance_list
