@@ -24,3 +24,10 @@ class testBase(unittest.TestCase):
         self.assertEqual(json_dict, '[{"id": 3, "width": 3, "height": 5, "x": 0, "y": 0}]')
         self.assertEqual(Base.to_json_string([]),"[]")
         self.assertEqual(Base.to_json_string(None), "[]")
+
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(''), [])
+        j_string = '[{"id":3, "width": 3, "height": 5, "x": 0, "y": 0}]'
+        self.assertEqual(type(Base.from_json_string(j_string)), list)
+        self.assertEqual(Base.from_json_string(j_string), [{'id': 3, 'width': 3, 'height': 5, 'x': 0, 'y': 0}])
