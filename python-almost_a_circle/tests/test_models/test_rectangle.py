@@ -83,3 +83,12 @@ class testRectangle(unittest.TestCase):
         printout_pattern = captured_pattern.getvalue()
         sys.stdout = sys.__stdout__
         self.assertEqual(printout_pattern, expected_pattern)
+
+        r10 = Rectangle(1, 1, 1, 1)
+        exp_pattern = '\n #\n'
+        cap_pattern = io.StringIO()
+        sys.stdout = cap_pattern
+        r10.display()
+        prt_pattern = cap_pattern.getvalue()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(prt_pattern, exp_pattern)
