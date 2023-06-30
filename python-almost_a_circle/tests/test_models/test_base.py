@@ -18,3 +18,4 @@ class testBase(unittest.TestCase):
         dictionary = b4.to_dictionary()
         json_dict = Base.to_json_string([dictionary])
         self.assertIsInstance(json_dict, str)
+        self.assertEqual(Base.to_json_string([]),"[]")
