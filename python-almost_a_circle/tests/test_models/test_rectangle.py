@@ -68,6 +68,10 @@ class testRectangle(unittest.TestCase):
         r8 = Rectangle(3, 6)
         self.assertEqual(r8.area(), 18)
 
+    def test_str(self):
+        re_str = Rectangle(5, 5, 1)
+        self.assertEqual(str(re_str), "[Rectangle] (12) 1/0 - 5/5")
+
     def test_display(self):
         r9 = Rectangle(1, 1)
         expected_pattern = '#\n'
