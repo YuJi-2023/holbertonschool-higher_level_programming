@@ -92,3 +92,20 @@ class testRectangle(unittest.TestCase):
         prt_pattern = cap_pattern.getvalue()
         sys.stdout = sys.__stdout__
         self.assertEqual(prt_pattern, exp_pattern)
+
+    def test_update(self):
+        r_u = Rectangle(1, 2, 3, 4, 5)
+        r_u.update(89)
+        self.assertTrue(r_u.id == 89)
+
+        r_u.update(89, 2)
+        self.assertTrue(r_u.id == 89 and r_u.width == 2)
+
+        r_u.update(89, 2, 3)
+        self.assertTrue(r_u.height == 3)
+
+        r_u.update(89, 2, 3, 4)
+        self.assertTrue(r_u.x == 4)
+
+        r_u.update(89, 2, 3, 4, 5)
+        self.assertTrue(r_u.y == 5)
