@@ -31,3 +31,9 @@ class testBase(unittest.TestCase):
         j_string = '[{"id":3, "width": 3, "height": 5, "x": 0, "y": 0}]'
         self.assertEqual(type(Base.from_json_string(j_string)), list)
         self.assertEqual(Base.from_json_string(j_string), [{'id': 3, 'width': 3, 'height': 5, 'x': 0, 'y': 0}])
+
+    def test_create(self):
+        r_c = Rectangle(3, 4, 5)
+        r_c_dict = r_c.to_dictionary()
+        r_c_new = Rectangle.create(**r_c_dict)
+        self.assertIsNot(r_c_new, r_c)
