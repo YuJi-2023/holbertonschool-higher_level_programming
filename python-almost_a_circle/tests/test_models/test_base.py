@@ -37,3 +37,11 @@ class testBase(unittest.TestCase):
         r_c_dict = r_c.to_dictionary()
         r_c_new = Rectangle.create(**r_c_dict)
         self.assertIsNot(r_c_new, r_c)
+
+    def test_save_to_file(self):
+        r_s1 = Rectangle(5, 4, 3, 2, 1)
+        r_s2 = Rectangle(6, 5, 4, 3, 2)
+        Rectangle.save_to_file([r_s1, r_s2])
+
+        with open("Rectangle.json", "r") as testFile:
+            self.assertIsNotNone(testFile.read())
