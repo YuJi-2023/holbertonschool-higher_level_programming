@@ -7,7 +7,7 @@ from models.square import Square
 
 class testBase(unittest.TestCase):
     """test class Base"""
-    def test_01_id(self):
+    def test_id(self):
         b1 = Base()
         b2 = Base()
         self.assertNotEqual(b1.id, b2.id)
@@ -15,7 +15,7 @@ class testBase(unittest.TestCase):
         b3 = Base(15)
         self.assertEqual(b3.id, 15)
 
-    def test_02_to_json_string(self):
+    def test_to_json_string(self):
         b4 = Rectangle(2, 3, 4, 5, 6)
         dictionary = b4.to_dictionary()
         json_dict = Base.to_json_string([dictionary])
@@ -28,14 +28,14 @@ class testBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([]),"[]")
         self.assertEqual(Base.to_json_string(None), "[]")
 
-    def test_03_from_json_string(self):
+    def test_from_json_string(self):
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string(''), [])
         j_string = '[{"id":3, "width": 3, "height": 5, "x": 0, "y": 0}]'
         self.assertEqual(type(Base.from_json_string(j_string)), list)
         self.assertEqual(Base.from_json_string(j_string), [{'id': 3, 'width': 3, 'height': 5, 'x': 0, 'y': 0}])
 
-    def test_04_create(self):
+    def test_create(self):
         r_c = Rectangle(3, 4, 5)
         r_c_dict = r_c.to_dictionary()
         r_c_new = Rectangle.create(**r_c_dict)

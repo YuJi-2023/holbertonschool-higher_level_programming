@@ -9,14 +9,14 @@ from models.rectangle import Rectangle
 class testRectangle(unittest.TestCase):
     """test subclass Rectanlge"""
 
-    def test_01_init(self):
+    def test_init(self):
         r0 = Rectangle(1, 2)
         r1 = Rectangle(2, 3)
         self.assertEqual(r0.id + 1, r1.id)
         r2 = Rectangle(2, 3, 4, 5, 12)
         self.assertEqual(r2.id, 12)
 
-    def test_02_args(self):
+    def test_args(self):
         r3 = Rectangle(6, 8, 1, 2, 23)
         self.assertEqual(r3.width, 6)
         self.assertEqual(r3.height, 8)
@@ -24,7 +24,7 @@ class testRectangle(unittest.TestCase):
         self.assertEqual(r3.y, 2)
         self.assertEqual(r3.id, 23)
 
-    def test_03_rectangle(self):
+    def test_rectangle(self):
         re1 = Rectangle(1, 2)
         re2 = Rectangle(1, 2, 3)
         re3 = Rectangle(1, 2, 3, 4)
@@ -52,7 +52,7 @@ class testRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
 
-    def test_04_raiseErrors(self):
+    def test_raiseErrors(self):
         r4 = Rectangle(5, 2)
         with self.assertRaises(TypeError):
             r4.width = "hello"
@@ -67,15 +67,15 @@ class testRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r7.height = -1
 
-    def test_05_area(self):
+    def test_area(self):
         r8 = Rectangle(3, 6)
         self.assertEqual(r8.area(), 18)
 
-    def test_06_str(self):
-        re_str = Rectangle(5, 5)
-        self.assertEqual(str(re_str), "[Rectangle] (11) 0/0 - 5/5")
+    def test_str(self):
+        re_str = Rectangle(5, 5, 1, 2, 77)
+        self.assertEqual(str(re_str), "[Rectangle] (77) 1/2 - 5/5")
 
-    def test_07_display(self):
+    def test_display(self):
         r9 = Rectangle(1, 1)
         expected_pattern = '#\n'
 
@@ -113,20 +113,20 @@ class testRectangle(unittest.TestCase):
         r_u.update(89, 2, 3, 4, 5)
         self.assertTrue(r_u.y == 5)
 
-    def test_09_save_None(self):
+    def test_save_None(self):
         """testNone"""
         Rectangle.save_to_file(None)
         self.assertTrue(os.path.exists("Rectangle.json"))
         os.remove("Rectangle.json")
 
-    def test_10_save_Empty(self):
+    def test_save_Empty(self):
         """testEmpty"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as t_file:
             self.assertEqual(t_file.read(), "[]")
             os.remove("Rectangle.json")
 
-    def test_11_save_to_file(self):
+    def test_save_to_file(self):
         """testNormal"""
         r_s = Rectangle(1, 2, 4, 5, 77)
         Rectangle.save_to_file([r_s])
@@ -134,7 +134,7 @@ class testRectangle(unittest.TestCase):
             self.assertEqual(t_file.read(), '[{"id": 77, "width": 1, "height": 2, "x": 4, "y": 5}]')
             os.remove("Rectangle.json")
 
-    def test_12_load_from_file(self):
+    def test_load_from_file(self):
         """fileNotExists"""
         obj_list = Rectangle.load_from_file()
         self.assertEqual(obj_list, [])
