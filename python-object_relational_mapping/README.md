@@ -1,3 +1,4 @@
 Python - Object-relational mapping
-##using MySQLdb module
-##using SQLAlchemy module
+# ORM
+# using MySQLdb module
+# using SQLAlchemy module
