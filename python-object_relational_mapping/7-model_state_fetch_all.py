@@ -22,3 +22,6 @@ if __name__ == "__main__":
     # display states
     for state in result:
         print(f"{state.id}: {state.name}")
+
+    # close the session
+    session.commit()
