@@ -25,4 +25,4 @@ if __name__ == "__main__":
     print(new_state.id)
 
     # close the session
-    session.commit()
+    session.close()

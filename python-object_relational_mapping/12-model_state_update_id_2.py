@@ -22,4 +22,4 @@ if __name__ == "__main__":
         update({State.name: 'New Mexico'})
 
     # close session
-    session.commit()
+    session.close()

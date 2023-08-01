@@ -26,4 +26,4 @@ if __name__ == "__main__":
         print(f"Not found")
 
     # close the session
-    session.commit()
+    session.close()

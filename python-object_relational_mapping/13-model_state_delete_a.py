@@ -22,4 +22,4 @@ if __name__ == "__main__":
         session.delete(state)
 
     # close the session
-    session.commit()
+    session.close()
