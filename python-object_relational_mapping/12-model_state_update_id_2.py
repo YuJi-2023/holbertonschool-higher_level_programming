@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     # perform update object
     session.query(State).\
-    filter(State.id == 2).\
-    update({State.name: 'New Mexico'})
+        filter(State.id == 2).\
+        update({State.name: 'New Mexico'})
+
     # close session
     session.commit()
