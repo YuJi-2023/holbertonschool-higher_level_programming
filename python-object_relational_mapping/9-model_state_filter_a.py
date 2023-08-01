@@ -20,10 +20,8 @@ if __name__ == "__main__":
     a_state = session.query(State).filter(State.name.like('%a%'))
 
     # display states
-    if first_state:
-        print(f"{first_state.id}: {first_state.name}")
-    else:
-        print("Nothing")
+    for state in a_state:
+        print(f"{state.id}: {state.name}")
 
     # close the session
     session.commit()
