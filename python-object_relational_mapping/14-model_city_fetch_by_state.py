@@ -3,7 +3,7 @@
 import sys
 from model_state import State
 from model_city import City
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -18,11 +18,11 @@ if __name__ == "__main__":
     session = Session()
 
     # perform query
-    result = session.query(City).join(State.id)
+    result = session.query(City, State).join(State)
 
     # display cites
-    for city in result:
-        print(f"{State.name}: ({city.id}) {city.name}")
+    for city, state in result:
+        print(f"{state.name}: ({city.id}) {city.name}")
 
     # close the session
-    session.commit()
+    session.close()
