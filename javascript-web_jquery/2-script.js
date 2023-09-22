@@ -1,5 +1,5 @@
 $(function () {
-  $("#red_header").on("click", function () {
-    $(this).css("color", "red");
+  $("div#red_header").on("click", function () {
+    $("header").css("color", "red");
   })
 });
